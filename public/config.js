@@ -1,0 +1,3 @@
+const bashConfig = {
+    baseUrl:'aaa'
+}
