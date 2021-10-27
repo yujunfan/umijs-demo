@@ -5,6 +5,14 @@ export default defineConfig({
   theme: {
     '@primary-color': '#1DA57A',
   },
+  // 这里默认为这个配置 locale: {
+  //   default: 'zh-CN',
+  //   antd: false,
+  //   title: false,
+  //   baseNavigator: true,
+  //   baseSeparator: '-',
+  // },
+  locale: {},
   headScripts: [
     { src: '/config.js' },
     {
