@@ -1,14 +1,14 @@
-import { Layout, Menu } from 'antd';
+import { Layout } from 'antd';
 import React, { Suspense, createContext } from 'react';
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
+
+// @ts-ignore
 import SiderMenuWrapper from '../components/SiderMenu';
+// @ts-ignore
 import DocumentTitle from 'react-document-title';
-import { ContainerQuery } from 'react-container-query';
+
+// @ts-ignore
 import Context from './MenuContext';
+import TabsLayout from '@/components/TabsLayout';
 const { Header, Content, Footer, Sider } = Layout;
 const BasicLayout = (props: any) => {
   const layout = (
@@ -24,8 +24,7 @@ const BasicLayout = (props: any) => {
             className="site-layout-background"
             style={{ padding: 24, minHeight: 760 }}
           >
-            {/* <TabsLayout {...props} /> */}
-            {props.children}
+            <TabsLayout {...props} />
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
@@ -37,19 +36,11 @@ const BasicLayout = (props: any) => {
 
   return (
     <>
-      <DocumentTitle title={'title'}>
-        {/* <ContainerQuery>
-        {params => (
-          <Context.Provider value={{text:'rtext'}}> */}
-        <div>{layout}</div>
-        {/* </Context.Provider>
-        )}
-      </ContainerQuery> */}
+      <DocumentTitle title={'My Web App'}>
+        <Context.Provider value={{ text: 'rtext' }}>
+          <div>{layout}</div>
+        </Context.Provider>
       </DocumentTitle>
-      <Suspense fallback={null}>
-        {' '}
-        <div>loading</div>
-      </Suspense>
     </>
   );
 };

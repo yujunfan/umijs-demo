@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icon, Layout, Menu } from 'antd';
 import { Link } from 'umi';
 const { Sider } = Layout;
 const { SubMenu } = Menu;
-
 const getIcon = (icon) => {
   if (typeof icon === 'string') {
     return <Icon type={icon} />;
@@ -15,7 +14,6 @@ const getMenuItemPath = (item) => {
   const icon = getIcon(item.icon);
   return (
     <Link to={path}>
-      {' '}
       {icon} <span>{name}</span>
     </Link>
   );
@@ -39,29 +37,44 @@ const getNavMenuItems = (menusData) => {
   if (!menusData) {
     return [];
   }
-  return menusData.map((item) => getSubMenuOrItem(item));
+  return menusData
+    .filter((item) => item.path)
+    .map((item) => getSubMenuOrItem(item));
 };
 const SiderMenuWrapper = React.memo((props) => {
-  const { routes } = props;
+  const { routes, location } = props;
+  const [openKeys, setOpenKeys] = useState([]);
+  const [selectKeys, setSelectKeys] = useState([]);
+  useEffect(() => {
+    setSelectKeys(location.pathname);
+  }, [location.pathname]);
 
-  console.log(props, 'props ');
+  useEffect(() => {
+    let _openKeys = [];
+    const findRoute = (data, openKeys) => {
+      return data.find((item) => {
+        if (item.path === location.pathname) {
+          _openKeys = openKeys;
+          return true;
+        }
+        if (item.routes)
+          return findRoute(item.routes, [...openKeys, item.path]);
+        return false;
+      });
+    };
+    findRoute([...routes], []);
+    setOpenKeys(_openKeys);
+  }, []);
+
   return (
-    <Sider
-      breakpoint="lg"
-      collapsedWidth="0"
-      onBreakpoint={(broken) => {
-        console.log(broken);
-      }}
-      onCollapse={(collapsed, type) => {
-        console.log(collapsed, type);
-      }}
-    >
+    <Sider breakpoint="lg" collapsedWidth="0">
       <div className="logo" />
       <Menu
         theme="dark"
         mode="inline"
-        defaultOpenKeys={['sub1']}
-        defaultSelectedKeys={['/dashboard']}
+        openKeys={openKeys}
+        selectedKeys={selectKeys}
+        onOpenChange={(openKeys) => setOpenKeys(openKeys)}
       >
         {getNavMenuItems(routes)}
       </Menu>
