@@ -7,7 +7,12 @@ export default [
   {
     path: '/',
     component: '../layouts/BasicLayout',
+    // redirect: '/dashboard',
     routes: [
+      {
+        path: '/',
+        redirect: '/dashboard',
+      },
       {
         path: '/dashboard',
         name: '首页',

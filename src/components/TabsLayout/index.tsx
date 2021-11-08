@@ -15,17 +15,16 @@ const TabsLayout = (props: any) => {
   const [menuList, setMenuList] = useState<string[]>([]);
   const history = useHistory();
   const location = useLocation();
+
   /** 点击tab */
   useEffect(() => {
+    // console.log(location.pathname,'aaaa')
+    if (location.pathname === '/') return;
     setActiveKey(location.pathname);
     if (!menuList.some((item) => item === location.pathname)) {
       setMenuList([...menuList, location.pathname]);
     }
   }, [location.pathname]);
-
-  const onClick = (item: string) => {
-    history.push(item);
-  };
 
   //树扁平化
   const flatten = (data: any) => {

@@ -5,6 +5,8 @@ export default defineConfig({
   theme: {
     '@primary-color': '#1DA57A',
   },
+  publicPath: './',
+  history: { type: 'hash' },
   // 这里默认为这个配置 locale: {
   //   default: 'zh-CN',
   //   antd: false,

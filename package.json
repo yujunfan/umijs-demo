@@ -8,6 +8,7 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
+  "history":"hash",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },

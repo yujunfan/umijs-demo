@@ -12,14 +12,14 @@ import TabsLayout from '@/components/TabsLayout';
 const { Header, Content, Footer, Sider } = Layout;
 const BasicLayout = (props: any) => {
   const layout = (
-    <Layout style={{ height: '100vh' }}>
+    <Layout style={{ height: '100vh', overflow: 'hidden' }}>
       <SiderMenuWrapper {...props} />
       <Layout>
         <Header
           className="site-layout-sub-header-background"
           style={{ padding: 0 }}
-        />
-        <Content style={{ margin: '24px 16px 0' }}>
+        ></Header>
+        <Content style={{ margin: '24px 16px 0', overflow: 'auto' }}>
           <div
             className="site-layout-background"
             style={{ padding: 24, minHeight: 760 }}

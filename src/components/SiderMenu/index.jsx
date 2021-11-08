@@ -13,7 +13,7 @@ const getMenuItemPath = (item) => {
   const { name, path } = item;
   const icon = getIcon(item.icon);
   return (
-    <Link to={path}>
+    <Link to={`${path}?sort=name`}>
       {icon} <span>{name}</span>
     </Link>
   );
@@ -76,7 +76,7 @@ const SiderMenuWrapper = React.memo((props) => {
         selectedKeys={selectKeys}
         onOpenChange={(openKeys) => setOpenKeys(openKeys)}
       >
-        {getNavMenuItems(routes)}
+        {getNavMenuItems(routes[1].routes)}
       </Menu>
     </Sider>
   );
