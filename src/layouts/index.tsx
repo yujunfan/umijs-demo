@@ -4,5 +4,6 @@ import BasicLayout from './BasicLayout';
 export default (props: any) => {
   const { location } = props;
   const { pathname } = location;
-  return <BasicLayout {...props}></BasicLayout>;
+  const isSider = true; //是否需要侧边导航
+  return isSider ? <BasicLayout {...props}></BasicLayout> : props.chilren;
 };

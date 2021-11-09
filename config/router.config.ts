@@ -6,7 +6,7 @@ export default [
   },
   {
     path: '/',
-    component: '../layouts/BasicLayout',
+    component: '../layouts/index',
     // redirect: '/dashboard',
     routes: [
       {
@@ -30,6 +30,7 @@ export default [
             path: '/base/employee',
             component: './base/employees',
             name: '员工',
+            layout: false,
           },
           {
             path: '/base/departments',

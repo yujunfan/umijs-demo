@@ -79,7 +79,7 @@ const SiderMenuWrapper = React.memo((props) => {
 
   return (
     <Sider breakpoint="lg" collapsedWidth="0" style={{ background: '#fff' }}>
-      <div className="logo" style={{ background: '#314fa9' }} />
+      <div className="logo" style={{ background: '#314fa9' }}></div>
       <Menu
         // theme="dark"
         mode="inline"

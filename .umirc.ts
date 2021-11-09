@@ -5,23 +5,11 @@ export default defineConfig({
   theme: {
     '@primary-color': '#1DA57A',
   },
+  // plugins:['dva'],
   publicPath: './',
   history: { type: 'hash' },
-  // 这里默认为这个配置 locale: {
-  //   default: 'zh-CN',
-  //   antd: false,
-  //   title: false,
-  //   baseNavigator: true,
-  //   baseSeparator: '-',
-  // },
   locale: {},
-  headScripts: [
-    { src: '/config.js' },
-    {
-      src: 'https://webapi.amap.com/maps?v=1.4.15&key=896a9ce2a8b9017a051ea4a36c570ce0&&y&&plugin=AMap.Geocoder,AMap.ToolBar,AMap.Geolocation,AMap.Autocomplete,AMap.MarkerClusterer,AMap.Heatmap,AMap.Driving',
-      type: 'text/javascript',
-    },
-  ],
+  headScripts: [{ src: '/config.js' }],
   links: [{ href: './img/logo.ico', rel: 'icon' }],
   metas: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
