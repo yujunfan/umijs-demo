@@ -37,9 +37,9 @@ const BasicLayout = (props: any) => {
   return (
     <>
       <DocumentTitle title={'My Web App'}>
-        <Context.Provider value={{ text: 'rtext' }}>
-          <div>{layout}</div>
-        </Context.Provider>
+        {/* <Context.Provider value={{ text: 'rtext' }}> */}
+        <div>{layout}</div>
+        {/* </Context.Provider> */}
       </DocumentTitle>
     </>
   );
