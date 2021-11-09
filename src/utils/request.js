@@ -37,9 +37,6 @@ const errorHandler = (error) => {
     });
     // @HACK
     /* eslint-disable no-underscore-dangle */
-    window.g_app._store.dispatch({
-      type: 'login/logout',
-    });
     return;
   }
   notification.error({

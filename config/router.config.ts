@@ -17,11 +17,13 @@ export default [
         path: '/dashboard',
         name: '首页',
         component: './base/base',
+        icon: 'HomeOutlined',
       },
       {
         path: '/base',
         name: '基础信息',
         isShow: true,
+        icon: 'DatabaseOutlined',
         // component: '../layouts/index',
         routes: [
           {

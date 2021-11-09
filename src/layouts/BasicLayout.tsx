@@ -17,7 +17,7 @@ const BasicLayout = (props: any) => {
       <Layout>
         <Header
           className="site-layout-sub-header-background"
-          style={{ padding: 0 }}
+          style={{ padding: 0, background: '#314fa9' }}
         ></Header>
         <Content style={{ margin: '24px 16px 0', overflow: 'auto' }}>
           <div
