@@ -1,17 +1,11 @@
-import { useParams } from 'umi';
-import { useEffect } from 'react';
 import { GetAllCommunity } from '@/services/api';
 import { connect } from 'dva';
 import { Button } from 'antd';
+import { useRequest } from 'ahooks';
+import { ExitSearchParams } from '@/utils/cutSearchParam';
 const Base = (props: any) => {
-  useEffect(() => {
-    GetAllCommunity({}).then((res: any) => {
-      console.log(res, 'this sir es');
-      // window.g_app._store.dispatch({
-      //   type: 'counter/add',
-      // });
-    });
-  }, []);
+  const { data } = useRequest(() => GetAllCommunity({}));
+  ExitSearchParams({ aaaa: 'bbbb' });
   return (
     <div>
       <h2>Count: {props.counter}</h2>

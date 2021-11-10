@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "ahooks": "^2.10.12",
     "antd": "^4.16.13",
     "react": "17.x",
     "react-container-query": "^0.12.0",

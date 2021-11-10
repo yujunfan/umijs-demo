@@ -5,5 +5,9 @@ export default (props: any) => {
   const { location } = props;
   const { pathname } = location;
   const isSider = true; //是否需要侧边导航
-  return isSider ? <BasicLayout {...props}></BasicLayout> : props.chilren;
+  return isSider ? (
+    <BasicLayout {...props}></BasicLayout>
+  ) : (
+    <div>{props.chilren}</div>
+  );
 };
