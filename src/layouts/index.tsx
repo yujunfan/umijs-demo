@@ -5,9 +5,6 @@ export default (props: any) => {
   const { location } = props;
   const { pathname } = location;
   const isSider = true; //是否需要侧边导航
-
-  console.log(props, 'aaa');
-
   return isSider ? (
     <BasicLayout {...props}></BasicLayout>
   ) : (

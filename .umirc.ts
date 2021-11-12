@@ -5,6 +5,9 @@ export default defineConfig({
   theme: {
     '@primary-color': '#1DA57A',
   },
+  alias: {
+    component: require.resolve('./src/pages/alias/src/components'),
+  },
   // plugins:['dva'],
   publicPath: './',
   history: { type: 'hash' },

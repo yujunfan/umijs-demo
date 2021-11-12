@@ -18,7 +18,6 @@ const TabsLayout = (props: any) => {
 
   /** 点击tab */
   useEffect(() => {
-    // console.log(location.pathname,'aaaa')
     if (location.pathname === '/') return;
     setActiveKey(location.pathname);
     if (!menuList.some((item) => item === location.pathname)) {
