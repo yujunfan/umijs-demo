@@ -1,5 +1,5 @@
 import { defineConfig } from 'umi';
-import routes from './config/router.config';
+import routerConfig from './config/router.config';
 export default defineConfig({
   title: 'test',
   theme: {
@@ -23,6 +23,6 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: routes,
+  routes: routerConfig,
   fastRefresh: {},
 });

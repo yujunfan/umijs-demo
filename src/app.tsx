@@ -1,4 +1,10 @@
-//运行时配置文件，可以在这里扩展运行时的能力，比如修改路由、修改 render 方法等。
+import Aroute from './routes/Aroute';
+import Broute from './routes/Broute';
+
+export function patchRoutes({ routes }: any) {
+  routes[1].routes = Aroute.routes;
+}
+
 export function render(oldRender: any) {
   oldRender();
 }
