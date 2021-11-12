@@ -5,6 +5,7 @@ export default defineConfig({
   theme: {
     '@primary-color': '#1DA57A',
   },
+  // base: '/some',//加个前缀
   alias: {
     component: require.resolve('./src/pages/alias/src/components'),
   },

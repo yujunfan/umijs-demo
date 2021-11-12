@@ -3,6 +3,7 @@ import Login from '@/pages/login';
 import Base from '@/pages/base/base';
 import Mock from '@/pages/mock/index';
 import Alias from '@/pages/alias';
+import InitalState from '@/pages/inital-state';
 import { Redirect } from 'umi';
 // const RedirectCpn = () => <Redirect to="/dashboard"></Redirect>
 export default {
@@ -39,6 +40,11 @@ export default {
           path: '/base/alias',
           component: Alias,
           name: 'alias',
+        },
+        {
+          path: '/base/initalstate',
+          component: InitalState,
+          name: 'InitalState',
         },
         {
           path: '/base/departments',
