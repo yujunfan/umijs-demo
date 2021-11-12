@@ -8,11 +8,15 @@ export default defineConfig({
   alias: {
     component: require.resolve('./src/pages/alias/src/components'),
   },
+  dynamicImport: {
+    loading: '@/Loading',
+  },
   // plugins:['dva'],
   publicPath: './',
+  // runtimePublicPath:true,
   history: { type: 'hash' },
   locale: {},
-  headScripts: [{ src: '/config.js' }],
+  headScripts: [{ src: './config.js' }],
   links: [{ href: './img/logo.ico', rel: 'icon' }],
   metas: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
