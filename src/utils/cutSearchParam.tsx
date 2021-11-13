@@ -1,5 +1,5 @@
 /** 分割查询字符 */
-const cutSearchParam = (field, value) => {
+const cutSearchParam = (field: any, value: any) => {
   const fields = field.replace(/@/, '.').split('_');
   if (Array.isArray(value)) {
     return {
@@ -16,8 +16,8 @@ const cutSearchParam = (field, value) => {
   };
 };
 /** 编辑查询的字段 */
-export const ExitSearchParams = (param) => {
-  let searchParams = [];
+export const ExitSearchParams = (param: any) => {
+  let searchParams: any[] = [];
   Object.keys(param).forEach((item) => {
     if (param[item] || param[item] === 0) {
       searchParams.push(cutSearchParam(item, param[item]));

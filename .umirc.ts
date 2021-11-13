@@ -7,7 +7,7 @@ export default defineConfig({
   },
   // base: '/some',//加个前缀
   alias: {
-    component: require.resolve('./src/pages/alias/src/components'),
+    component: require.resolve('./src/components/index'),
   },
   dynamicImport: {
     loading: '@/Loading',

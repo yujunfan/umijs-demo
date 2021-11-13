@@ -23,12 +23,11 @@ const codeMessage = {
   504: '网关超时。',
 };
 
-/**
- * 异常处理程序
- */
-const errorHandler = (error) => {
+const errorHandler = (error: any) => {
   const { response = {} } = error;
+  //@ts-ignore
   const errortext = codeMessage[response.status] || response.statusText;
+  //@ts-ignore
   const { status, url } = response;
 
   if (status === 401) {
@@ -61,7 +60,8 @@ const errorHandler = (error) => {
  * 配置request请求时的默认参数
  */
 const request = extend({
-  prefix: window.config.baseUrl,
+  //@ts-ignore
+  prefix: window?.config?.baseUrl,
   errorHandler, // 默认错误处理
   // credentials: 'include', // 默认请求是否带上cookie
 });

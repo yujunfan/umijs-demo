@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import { Footer } from 'component';
-const Alias: FC = () => {
+import { STable } from 'component';
+const Alias: FC<{}> = () => {
+  const data = { list: [], total: 0 };
+  const loading = false;
+  const columns = [{ title: '名称', dataIndex: 'name' }];
   return (
     <div>
       ALIAS
-      <Footer></Footer>
+      <STable data={data} pagination={{}} loading={loading} columns={columns} />
     </div>
   );
 };

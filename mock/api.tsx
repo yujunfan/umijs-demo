@@ -11,7 +11,7 @@ export default {
   '/api/users/1': { name: 'ahwgs' },
 
   // 支持自定义函数，API 参考 express@4
-  'POST /api/users/create': (req, res) => {
+  'POST /api/users/create': (req: any, res: any): any => {
     const { name } = req.body;
     // 添加跨域请求头
     res.setHeader('Access-Control-Allow-Origin', '*');

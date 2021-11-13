@@ -1,8 +1,8 @@
 import request from '@/utils/request';
 
 const fetchData =
-  (url, method = 'POST') =>
-  (data) => {
+  (url: string, method = 'POST') =>
+  (data: any) => {
     return request(url, {
       method,
       data,
