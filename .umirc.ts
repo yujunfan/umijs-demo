@@ -12,11 +12,39 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/Loading',
   },
+  chainWebpack: function (config, { env }) {
+    config.merge({
+      plugin: {
+        install: {
+          plugin: require('uglifyjs-webpack-plugin'),
+          args: [
+            {
+              sourceMap: false,
+              uglifyOptions: {
+                compress: {
+                  // remove `console.*`
+                  drop_console: env === 'development' ? false : true,
+                },
+                output: {
+                  // whether to actually beautify the output
+                  beautify: false,
+                  // remove all comments
+                  comments: false,
+                },
+              },
+            },
+          ],
+        },
+      },
+    });
+  },
+  // ssr: {},
   // plugins:['dva'],
   publicPath: './',
   // runtimePublicPath:true,
   history: { type: 'hash' },
   locale: {},
+  mfsu: {},
   headScripts: [{ src: './config.js' }],
   links: [{ href: './img/logo.ico', rel: 'icon' }],
   metas: [

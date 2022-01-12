@@ -10,6 +10,8 @@ import DocumentTitle from 'react-document-title';
 import Context from './MenuContext';
 import TabsLayout from '@/components/TabsLayout';
 const { Header, Content, Footer, Sider } = Layout;
+console.log('da yin da yin');
+
 const BasicLayout = (props: any) => {
   const layout = (
     <Layout style={{ height: '100vh', overflow: 'hidden' }}>
